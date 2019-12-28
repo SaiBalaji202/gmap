@@ -134,13 +134,14 @@ namespace gmap01
         List<int> routeOverlays = new List<int>();
         void btnGetRouteInfo_Click(object sender, EventArgs e)
         {
-            // GDirections ss;
-            // GMapProviders.GoogleMap.GetDirections(out ss, _points[0], _points[1], false, false, false, false, false);
+            GDirections ss;
+            GMapProviders.GoogleMap.GetDirections(out ss, _points[0], _points[1], false, false, false, false, false);
             
-            var route = GoogleMapProvider.Instance
-               .GetRoute(_points[0], _points[1], false, false, 14);
+            //var route = GoogleMapProvider.Instance
+            //    .GetRoute(_points[0], _points[1], false, false, 14);
+            // route = new MapRoute(__points, "rt");
             
-            var r = new GMapRoute(ss.Points, "My Route")
+            var r = new GMapRoute(ss.Route, "My Route")
             {
                 Stroke = new Pen(Color.Red, 5)
             };
